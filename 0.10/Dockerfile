@@ -1,7 +1,5 @@
 FROM node:0.10
 
-RUN groupadd -r node && useradd -mr -g node node
-
 # grab gosu for easy step-down from root
 ENV GOSU_VERSION 1.7
 RUN set -x \
