@@ -1,0 +1,1 @@
+docker build -t dumb-init:1.2.0 ../dumb-init
