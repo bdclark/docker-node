@@ -6,7 +6,8 @@ env:
   global:
     - REPO=steadyserv/node
   matrix:
-    - VERSION=9.0-alpine TAG=alpine TAG=latest MAJOR=9
+    - VERSION=10.2-alpine TAG=alpine TAG=latest MAJOR=10
+    - VERSION=9.0-alpine TAG=alpine MAJOR=9
     - VERSION=8.3-alpine MAJOR=8
     - VERSION=8.2-alpine
     - VERSION=8.1-alpine
@@ -26,5 +27,6 @@ before_script:
   - env | sort
   - cd "$VERSION"
   - export IMAGE="${REPO}:${VERSION}"
+  - ../.travis/dependencies.sh
 
 script: ../.travis/build.sh
