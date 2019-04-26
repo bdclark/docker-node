@@ -7,30 +7,14 @@ env:
     - REPO=steadyserv/node
   matrix:
     # always prefer latest tag on most recent *alpine* distribution (TAG=latest)
-    # exclude DIST arg for non-alpine (debian) upstream
-    # if MAJOR is set, will add (update) tag for `$REPO:$MAJOR` (or `$REPO:$MAJOR-$DIST`)
-    - VERSION=10.2 DIST=alpine MAJOR=10 TAG=latest
-    - VERSION=10.2
-    - VERSION=9.11 DIST=alpine MAJOR=9
-    - VERSION=9.11 MAJOR=9
-    - VERSION=8.11 DIST=alpine MAJOR=8
-    # No longer including builds below (tagged builds remain in docker registry)
-    # - VERSION=9.0-alpine TAG=alpine TAG=latest MAJOR=9
-    # - VERSION=8.3-alpine MAJOR=8
-    # - VERSION=8.2-alpine
-    # - VERSION=8.1-alpine
-    # - VERSION=8.0-alpine
-    # - VERSION=7.6-alpine MAJOR=7
-    # - VERSION=7.1-alpine
-    # - VERSION=7.1
-    # - VERSION=7.0
-    # - VERSION=6.5 MAJOR=6
-    # - VERSION=6.4
-    # - VERSION=6.3
-    # - VERSION=6.0
-    # - VERSION=5.8 MAJOR=5
-    # - VERSION=0.10 MAJOR=0.10
-
+    - VERSION=12.0 DIST=alpine TAG=latest
+    - VERSION=12.0 DIST=slim
+    - VERSION=10.15 DIST=alpine TAG=lts-alpine
+    - VERSION=10.15 DIST=slim TAG=lts-slim
+    - VERSION=9.11 DIST=alpine
+    - VERSION=9.11 DIST=slim
+    - VERSION=8.16 DIST=alpine
+    - VERSION=8.16 DIST=slim
 before_script:
   - env | sort
 
